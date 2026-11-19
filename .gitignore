@@ -5,7 +5,9 @@ build/
 !**/src/test/**/build/
 .kotlin
 aiforopenide/
+.aiforopenide/
 journals/
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
