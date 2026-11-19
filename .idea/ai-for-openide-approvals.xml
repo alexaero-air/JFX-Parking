@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AiForOpenIdeSavedApprovals">
+    <approvals>
+      <approval>
+        <option name="action" value="execute" />
+        <option name="resource" value="`python -c &quot;&#10;from zipfile import ZipFile&#10;from xml.etree import ElementTree as ET&#10;import os&#10;path = r'C:\Users\alexa\Downloads\Telegram Desktop\Контрольная_точка_2_Проект_Парковка.pptx'&#10;ns = {'a': 'http://schemas.openxmlformats.org/drawingml/2006/main', 'p': 'http://schemas.openxmlformats.org/presentationml/2006/main', 'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}&#10;with ZipFile(path) as z:&#10;    slides = sorted([n for n in z.namelist() if n.startswith('ppt/slides/slide') and n.endswith('.xml')])&#10;    print('SLIDES:', slides)&#10;    for s in slides:&#10;        print('\n==========', s, '==========')&#10;        root = ET.fromstring(z.read(s))&#10;        texts = []&#10;        for t in root.iter('{http://schemas.openxmlformats.org/drawingml/2006/main}t'):&#10;            if t.text:&#10;                texts.append(t.text)&#10;            if t.tail:&#10;                texts.append(t.tail)&#10;        print('\n'.join(texts))&#10;&quot;&#10;`" />
+      </approval>
+      <approval>
+        <option name="action" value="execute" />
+        <option name="resource" value="`Add-Type -AssemblyName System.Drawing&#10;foreach ($n in 1,2,3) {&#10;  $p = &quot;C:\Users\alexa\OpenideProjects\kt2\src\main\resources\cars\$n.png&quot;&#10;  $img = [System.Drawing.Image]::FromFile($p)&#10;  $bmp = New-Object System.Drawing.Bitmap $img&#10;  $minX = $bmp.Width; $minY = $bmp.Height; $maxX = -1; $maxY = -1&#10;  $count = 0&#10;  for ($y=0; $y -lt $bmp.Height; $y+=2) {&#10;    for ($x=0; $x -lt $bmp.Width; $x+=2) {&#10;      $c = $bmp.GetPixel($x,$y)&#10;      if ($c.A -gt 20) {&#10;        $count++&#10;        if ($x -lt $minX) { $minX = $x }&#10;        if ($y -lt $minY) { $minY = $y }&#10;        if ($x -gt $maxX) { $maxX = $x }&#10;        if ($y -gt $maxY) { $maxY = $y }&#10;      }&#10;    }&#10;  }&#10;  Write-Output (&quot;{0}.png bounds=({1},{2})-({3},{4}) size={5}x{6} opaqueApprox={7}&quot; -f $n,$minX,$minY,$maxX,$maxY,($maxX-$minX+1),($maxY-$minY+1),$count)&#10;  $img.Dispose(); $bmp.Dispose()&#10;}&#10;`" />
+      </approval>
+    </approvals>
+  </component>
+</project>
