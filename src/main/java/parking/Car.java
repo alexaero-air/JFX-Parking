@@ -8,17 +8,11 @@ public class Car {
     private static final Random RND = new Random();
     private static final Set<String> USED = new HashSet<>();
     private static final String ABC = "ABCDEFGHJKLMNPRSTUVWXYZ";
-    private static final String[] COLORS = {
-            "#E76F51", "#F4A261", "#E9C46A", "#2A9D8F", "#4CC9F0",
-            "#90BE6D", "#C77DFF", "#F8F9FA", "#118AB2", "#EF476F"
-    };
 
     final String plate;
-    final String color;
 
     Car() {
         plate = nextPlate();
-        color = COLORS[RND.nextInt(COLORS.length)];
     }
 
     private static String nextPlate() {
